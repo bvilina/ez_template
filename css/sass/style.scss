@@ -1,0 +1,89 @@
+@import "bourbon/bourbon";
+
+//font-face mixins
+@include font-face(SourceSansPro, '/fonts/.../nameoffont');
+@include font-face(SourceSansPro, '/fonts/.../nameoffont', bold);
+@include font-face(SourceSansPro, '/fonts/.../nameoffont', normal, italic);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+
+//Font Variables
+$open: 'Open Sans', sans-serif;
+
+
+//Color Variables
+$fade: #c2c2c2;
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: $open;
+	margin: 0 0 10px 0;
+}
+
+body {
+	font-family: $open;
+}
+
+.container {
+	max-width: 1280px;
+	height: auto;
+}
+
+footer {
+	color: #fff;
+	background: $fade;
+	min-height: 200px;
+		ul {
+			list-style: none;
+			padding: 20px 0;
+			text-align: center;
+				li {
+					display: inline-block;
+						&:after {
+							content: " | ";
+						}
+						&:last-child:after {
+							content: "";
+						}
+					a {
+						color: #fff;
+						@include transition (all .4s);
+							&:hover {
+								color: #000;
+								@include transition (all .4s);
+							}
+					}
+				}
+		}
+}
+
+header {
+	h1 {
+		text-align: center;
+		font-weight: 800;
+		text-transform: uppercase;
+		font-size: 4em;
+		margin: 0;
+	}
+
+	figure {
+		padding-top: 50px;
+	}
+
+	figcaption {
+		font-family: $open;
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+}
+
+h2 {
+	font-size: 2.5em;
+	font-weight: 300;
+	border-bottom: solid 1px $fade;
+}
